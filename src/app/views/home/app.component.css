@@ -57,6 +57,10 @@
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms ease;
 }
 
 .container-skills-form {
@@ -66,11 +70,18 @@
 }
 
 .skill-form {
-  background-color: #ff6600;
+  background-color: #6439ff;
   color: white;
   border-radius: 10px;
   font-size: small;
-  padding: 5px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-form > img {
+  cursor: pointer;
 }
 
 .button-form {
@@ -88,4 +99,8 @@
 
 .button-form:hover {
   background-color: #2e5a53;
+}
+
+.button-add-skill:hover {
+  background-color: #418075;
 }

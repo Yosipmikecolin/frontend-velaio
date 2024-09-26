@@ -76,8 +76,9 @@
           class="input"
           placeholder="Habilidad"
         />
+
         <button type="button" class="button-add-skill" (click)="addSkill()">
-          Agregar
+          <img src="assets/icon-add.png" width="30px" alt="Icono de agregar" />
         </button>
       </div>
       <div *ngIf="submitted">
@@ -88,7 +89,12 @@
       <ul class="container-skills-form">
         <li *ngFor="let skill of skills" class="skill-form">
           {{ skill }}
-          <button type="button" (click)="removeSkill(skill)">x</button>
+          <img
+            (click)="removeSkill(skill)"
+            src="assets/icon-delete.png"
+            width="17px"
+            alt="Icono de agregar"
+          />
         </li>
       </ul>
     </div>

@@ -11,7 +11,6 @@ export class AppComponent {
   taskForm: FormGroup;
   submitted = false;
   skills: string[] = [];
-  title = 'APP TASKS';
 
   constructor() {
     this.taskForm = new FormGroup({
