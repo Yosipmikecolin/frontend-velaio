@@ -1,16 +1,97 @@
 <section class="container-tasks">
-  <form class="form-task">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="form-task">
     <h1 class="title">Crear nueva tarea</h1>
     <div class="container-inputs">
-      <input class="input" placeholder="Nombre de la tarea" />
-      <input class="input" placeholder="Fecha limite" />
+      <input
+        formControlName="taskName"
+        class="input"
+        placeholder="Nombre de la tarea"
+      />
+      <div *ngIf="submitted">
+        <small
+          *ngIf="taskForm.get('taskName')?.errors?.['required']"
+          class="text-error"
+          >El nombre es obligatorio</small
+        >
+        <small
+          *ngIf="taskForm.get('taskName')?.errors?.['minlength']"
+          class="text-error"
+          >Debe tener al menos 3 caracteres</small
+        >
+      </div>
+      <input
+        formControlName="dueDate"
+        class="input"
+        type="date"
+        placeholder="Fecha límite"
+      />
+      <div *ngIf="submitted">
+        <small
+          *ngIf="taskForm.get('dueDate')?.errors?.['required']"
+          class="text-error"
+          >La fecha límite es obligatoria</small
+        >
+      </div>
     </div>
-
     <h1 class="title">Personas asociadas</h1>
     <div class="container-inputs">
-      <input class="input" placeholder="Nombre de la tarea" />
-      <input class="input" placeholder="Fecha limite" />
+      <input
+        class="input"
+        placeholder="Nombre completo"
+        formControlName="fullName"
+      />
+      <div *ngIf="submitted">
+        <small
+          *ngIf="taskForm.get('fullName')?.errors?.['required']"
+          class="text-error"
+          >El nombre completo es obligatorio</small
+        >
+
+        <small
+          *ngIf="taskForm.get('fullName')?.errors?.['minlength']"
+          class="text-error"
+          >Debe tener al menos 5 caracteres</small
+        >
+      </div>
+      <input
+        formControlName="age"
+        type="number"
+        class="input"
+        placeholder="Edad"
+      />
+      <div *ngIf="submitted">
+        <small
+          *ngIf="taskForm.get('age')?.errors?.['required']"
+          class="text-error"
+          >La edad es obligatoria</small
+        >
+
+        <small *ngIf="taskForm.get('age')?.errors?.['min']" class="text-error"
+          >Debe ser mayor de 18 años</small
+        >
+      </div>
+      <div class="container-input-skills">
+        <input
+          formControlName="nameSkill"
+          class="input"
+          placeholder="Habilidad"
+        />
+        <button type="button" class="button-add-skill" (click)="addSkill()">
+          Agregar
+        </button>
+      </div>
+      <div *ngIf="submitted">
+        <small *ngIf="!skills.length" class="text-error"
+          >Debes agregar al menos una habilidad</small
+        >
+      </div>
+      <ul class="container-skills-form">
+        <li *ngFor="let skill of skills" class="skill-form">
+          {{ skill }}
+          <button type="button" (click)="removeSkill(skill)">x</button>
+        </li>
+      </ul>
     </div>
-    <button class="button-form">Crear tarea</button>
+    <button class="button-form">Guadar tarea</button>
   </form>
 </section>
