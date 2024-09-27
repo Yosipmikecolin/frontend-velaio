@@ -105,6 +105,15 @@
         </li>
       </ul>
     </div>
+    <button
+      type="button"
+      [disabled]="!areFieldsFilled()"
+      [ngClass]="areFieldsFilled() ? 'button-user' : 'button-user-disebled'"
+      (click)="addPerson()"
+    >
+      Agregar persona
+    </button>
+    <hr />
     <button class="button-form" type="submit">Guadar tarea</button>
   </form>
 </section>

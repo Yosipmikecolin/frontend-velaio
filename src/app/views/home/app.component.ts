@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { dateValidator, skillsValidator } from 'src/app/validations';
+import { dateValidator } from 'src/app/validations';
+import { People } from 'src/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { dateValidator, skillsValidator } from 'src/app/validations';
 export class AppComponent {
   taskForm: FormGroup;
   submitted = false;
+  people: People[] = [];
   skills: string[] = [];
 
   constructor() {
@@ -48,5 +50,30 @@ export class AppComponent {
   removeSkill(skill: string) {
     const newSkills = this.skills.filter((i) => i !== skill);
     this.skills = newSkills;
+  }
+
+  areFieldsFilled(): boolean {
+    const fullName = this.taskForm.get('fullName')?.value;
+    const age = this.taskForm.get('age')?.value;
+    const skills = this.skills;
+
+    return fullName && age && skills.length > 0;
+  }
+
+  addPerson() {
+    const fullNameControl = this.taskForm.get('fullName');
+    const ageControl = this.taskForm.get('age');
+    const skills = this.skills;
+    if (fullNameControl?.valid && ageControl?.valid && skills.length) {
+      this.people.push({
+        name: fullNameControl.value,
+        age: fullNameControl.value,
+        skills,
+      });
+    } else {
+      alert('#');
+      fullNameControl?.markAsTouched();
+      ageControl?.markAsTouched();
+    }
   }
 }

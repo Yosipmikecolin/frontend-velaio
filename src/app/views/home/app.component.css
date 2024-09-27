@@ -84,6 +84,31 @@
   cursor: pointer;
 }
 
+.button-user {
+  padding: 10px;
+  font-size: medium;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #fff0d1;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: 500ms ease;
+  margin-bottom: 20px;
+}
+
+.button-user-disebled {
+  padding: 10px;
+  font-size: medium;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #fff0d1b7;
+  color: black;
+  border: none;
+  transition: 500ms ease;
+  margin-bottom: 20px;
+}
+
 .button-form {
   width: 100%;
   padding: 15px;
@@ -103,4 +128,7 @@
 
 .button-add-skill:hover {
   background-color: #418075;
+}
+.button-user:hover {
+  background-color: #ebddc3;
 }
