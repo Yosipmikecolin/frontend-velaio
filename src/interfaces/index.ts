@@ -1,4 +1,5 @@
 export interface DataTask {
+  id: number;
   task: Task;
   people: People[];
 }
@@ -12,4 +13,5 @@ export interface People {
 export interface Task {
   taskName: string;
   dueDate: Date;
+  completed: boolean;
 }

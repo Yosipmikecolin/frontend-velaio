@@ -1,7 +1,6 @@
-// api.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, firstValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { DataTask, Task } from 'src/interfaces';
 
 @Injectable({

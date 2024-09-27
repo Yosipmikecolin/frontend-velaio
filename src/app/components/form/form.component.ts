@@ -4,6 +4,7 @@ import { ApiService } from './form.service';
 import { dateValidator } from 'src/app/validations';
 import { DataTask, People } from 'src/interfaces';
 import { Event } from '@angular/router';
+import { generateRandomId } from 'src/utils';
 
 @Component({
   selector: 'app-form',
@@ -40,17 +41,19 @@ export class FormComponent {
     if (this.people.length && taskName && dueDate) {
       this.loading = true;
       const task: DataTask = {
-        task: { taskName, dueDate },
+        id: generateRandomId(),
+        task: { taskName, dueDate, completed: false },
         people: this.people,
       };
       try {
-        const response = await this.apiService.postData(task);
-        console.log('Respuesta de la API:', response);
+        await this.apiService.postData(task);
+        alert('Tarea creada exitosamente');
         this.taskForm.reset();
         this.submitted = false;
         this.people = [];
-      } catch (error) {
-        console.error('Error en la petición:', error);
+      } catch ({ error }: any) {
+        const { message } = error;
+        alert(message);
       } finally {
         this.loading = false;
       }
