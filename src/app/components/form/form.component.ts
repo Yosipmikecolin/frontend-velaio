@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from './form.service';
 import { dateValidator } from 'src/app/validations';
-import { People } from 'src/interfaces';
+import { DataTask, People } from 'src/interfaces';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -11,10 +13,11 @@ import { People } from 'src/interfaces';
 export class FormComponent {
   taskForm: FormGroup;
   submitted = false;
+  loading = false;
   people: People[] = [];
   skills: string[] = [];
 
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.taskForm = new FormGroup({
       taskName: new FormControl('', [
         Validators.required,
@@ -30,13 +33,27 @@ export class FormComponent {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
     const taskName = this.taskForm.get('taskName')?.value;
     const dueDate = this.taskForm.get('dueDate')?.value;
     if (this.people.length && taskName && dueDate) {
-      this.taskForm.reset();
-      this.submitted = false;
+      this.loading = true;
+      const task: DataTask = {
+        task: { taskName, dueDate },
+        people: this.people,
+      };
+      try {
+        const response = await this.apiService.postData(task);
+        console.log('Respuesta de la API:', response);
+        this.taskForm.reset();
+        this.submitted = false;
+        this.people = [];
+      } catch (error) {
+        console.error('Error en la petición:', error);
+      } finally {
+        this.loading = false;
+      }
     }
   }
 

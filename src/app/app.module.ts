@@ -8,6 +8,7 @@ import { TasksComponent } from './views/tasks/tasks.component';
 import { FormComponent } from './components/form/form.component';
 import { NoFoundComponent } from './views/no-found/no-found.component';
 import { HomeComponent } from './views/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,7 +25,12 @@ const routes: Routes = [
     NoFoundComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent],
