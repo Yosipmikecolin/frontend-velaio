@@ -31,6 +31,12 @@
           class="text-error"
           >La fecha límite es obligatoria</small
         >
+
+        <small
+          *ngIf="!taskForm.get('dueDate')?.errors?.['required'] && taskForm.get('dueDate')?.errors?.['notFutureDate']"
+          class="text-error"
+          >La fecha debe ser posterior a la actual</small
+        >
       </div>
     </div>
     <h1 class="title">Personas asociadas</h1>
@@ -72,6 +78,7 @@
       </div>
       <div class="container-input-skills">
         <input
+          type="text"
           formControlName="nameSkill"
           class="input"
           placeholder="Habilidad"
@@ -98,6 +105,6 @@
         </li>
       </ul>
     </div>
-    <button class="button-form">Guadar tarea</button>
+    <button class="button-form" type="submit">Guadar tarea</button>
   </form>
 </section>

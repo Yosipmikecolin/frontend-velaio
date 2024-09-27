@@ -12,3 +12,13 @@ export function skillsValidator(): ValidatorFn {
     }
   };
 }
+
+export function dateValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const selectedDate = new Date(control.value);
+    const currentDate = new Date();
+
+    // Si la fecha seleccionada es anterior o igual a la fecha actual, retorna un error
+    return selectedDate > currentDate ? null : { notFutureDate: true };
+  };
+}

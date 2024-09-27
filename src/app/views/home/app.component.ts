@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { skillsValidator } from 'src/app/validations';
+import { dateValidator, skillsValidator } from 'src/app/validations';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent {
         Validators.required,
         Validators.minLength(3),
       ]),
-      dueDate: new FormControl('', Validators.required),
+      dueDate: new FormControl('', [Validators.required, dateValidator()]),
       fullName: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
