@@ -67,6 +67,8 @@ export class AppComponent {
   }
 
   addPerson() {
+    const taskName = this.taskForm.get('taskName');
+    const dueDate = this.taskForm.get('dueDate');
     const fullNameControl = this.taskForm.get('fullName');
     const ageControl = this.taskForm.get('age');
     const skillControl = this.taskForm.get('nameSkill');
@@ -81,6 +83,10 @@ export class AppComponent {
       ageControl.setValue('');
       skillControl?.setValue('');
       this.skills = [];
+
+      if (taskName?.valid && dueDate?.valid) {
+        this.submitted = false;
+      }
     }
   }
 }
