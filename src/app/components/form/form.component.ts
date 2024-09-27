@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from './form.service';
 import { dateValidator } from 'src/app/validations';
 import { DataTask, People } from 'src/interfaces';
 import { Event } from '@angular/router';
 import { generateRandomId } from 'src/utils';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-form',
@@ -46,7 +46,7 @@ export class FormComponent {
         people: this.people,
       };
       try {
-        await this.apiService.postData(task);
+        await this.apiService.createTask(task);
         alert('Tarea creada exitosamente');
         this.taskForm.reset();
         this.submitted = false;
