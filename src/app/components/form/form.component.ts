@@ -4,11 +4,11 @@ import { dateValidator } from 'src/app/validations';
 import { People } from 'src/interfaces';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css'],
 })
-export class AppComponent {
+export class FormComponent {
   taskForm: FormGroup;
   submitted = false;
   people: People[] = [];
