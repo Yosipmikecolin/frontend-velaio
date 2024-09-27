@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './views/home/app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent }, // Ruta raíz
@@ -10,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [BrowserModule, ReactiveFormsModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [],

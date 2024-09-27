@@ -15,7 +15,6 @@ export class AppComponent {
   skills: string[] = [];
 
   constructor() {
-    console.log('people', this.people);
     this.taskForm = new FormGroup({
       taskName: new FormControl('', [
         Validators.required,
@@ -33,9 +32,11 @@ export class AppComponent {
 
   onSubmit() {
     this.submitted = true;
-    if (this.taskForm.valid) {
-      alert('Datos guardados');
-      console.log(this.taskForm.value);
+    const taskName = this.taskForm.get('taskName')?.value;
+    const dueDate = this.taskForm.get('dueDate')?.value;
+    if (this.people.length && taskName && dueDate) {
+      this.taskForm.reset();
+      this.submitted = false;
     }
   }
 
