@@ -1,6 +1,10 @@
 <nav class="container-header">
   <ul>
-    <li>Crear tarea</li>
-    <li>Tareas</li>
+    <li [ngClass]="{ 'active-link': currentRoute === '/' }">
+      <a routerLink=""> Crear tarea </a>
+    </li>
+    <li [ngClass]="{ 'active-link': currentRoute === '/tasks' }">
+      <a routerLink="/tasks"> Tareas </a>
+    </li>
   </ul>
 </nav>
