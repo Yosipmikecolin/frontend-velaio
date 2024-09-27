@@ -9,7 +9,7 @@ import { DataTask } from 'src/interfaces';
 })
 export class TasksComponent {
   tasks: DataTask[] = [];
-  type: string = 'completed';
+  type: string = 'incomplete';
 
   constructor(private apiService: ApiService) {}
 

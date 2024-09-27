@@ -35,6 +35,9 @@
   color: white;
   flex-direction: column;
   transition: 500ms ease;
+}
+
+.icon {
   cursor: pointer;
 }
 

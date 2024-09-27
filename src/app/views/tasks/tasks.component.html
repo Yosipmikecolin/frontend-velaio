@@ -1,16 +1,6 @@
 <div class="container-tasks">
   <div class="header-tasks">
     <button
-      (click)="changeView('completed')"
-      [ngClass]="{
-        'button-active': type === 'completed',
-        'button-inactive': type === 'incomplete'
-      }"
-    >
-      Completadas
-    </button>
-
-    <button
       (click)="changeView('incomplete')"
       [ngClass]="{
         'button-active': type === 'incomplete',
@@ -18,6 +8,15 @@
       }"
     >
       Incompletas
+    </button>
+    <button
+      (click)="changeView('completed')"
+      [ngClass]="{
+        'button-active': type === 'completed',
+        'button-inactive': type === 'incomplete'
+      }"
+    >
+      Completadas
     </button>
   </div>
   <div class="body-tasks">
@@ -32,9 +31,15 @@
       <div class="header-bubble">
         <h3>{{ item.task.taskName }}</h3>
         <img
-          src="assets/icon-incompleted.png"
+          class="icon"
+          [src]="
+            type === 'completed'
+              ? 'assets/icon-completed.png'
+              : 'assets/icon-incompleted.png'
+          "
           width="30px"
           alt="Icono de agregar"
+          (click)="type === 'incomplete' && updatedTasks(item.id)"
         />
       </div>
 
