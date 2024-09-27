@@ -69,7 +69,18 @@
   gap: 10px;
 }
 
-.skill-form {
+.bubble-people {
+  background-color: #fccd2a;
+  color: white;
+  border-radius: 10px;
+  font-size: small;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bubble-skill {
   background-color: #6439ff;
   color: white;
   border-radius: 10px;
@@ -84,7 +95,24 @@
   cursor: pointer;
 }
 
-.button-user {
+.container-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.peple {
+  background-color: #6439ff;
+  color: white;
+  border-radius: 10px;
+  font-size: small;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-people {
   padding: 10px;
   font-size: medium;
   margin-top: 20px;
@@ -97,7 +125,7 @@
   margin-bottom: 20px;
 }
 
-.button-user-disebled {
+.button-people-disebled {
   padding: 10px;
   font-size: medium;
   margin-top: 20px;

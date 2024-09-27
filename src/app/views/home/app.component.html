@@ -39,14 +39,27 @@
         >
       </div>
     </div>
+
     <h1 class="title">Personas asociadas</h1>
+
+    <ul class="container-people">
+      <li *ngFor="let person of people" class="bubble-people">
+        {{ person.name }}
+        <img
+          (click)="removeSkill(person.name)"
+          src="assets/icon-delete.png"
+          width="17px"
+          alt="Icono de agregar"
+        />
+      </li>
+    </ul>
     <div class="container-inputs">
       <input
         class="input"
         placeholder="Nombre completo"
         formControlName="fullName"
       />
-      <div *ngIf="submitted">
+      <div *ngIf="submitted || areFieldsFilled()">
         <small
           *ngIf="taskForm.get('fullName')?.errors?.['required']"
           class="text-error"
@@ -65,7 +78,7 @@
         class="input"
         placeholder="Edad"
       />
-      <div *ngIf="submitted">
+      <div *ngIf="submitted || areFieldsFilled()">
         <small
           *ngIf="taskForm.get('age')?.errors?.['required']"
           class="text-error"
@@ -94,7 +107,7 @@
         >
       </div>
       <ul class="container-skills-form">
-        <li *ngFor="let skill of skills" class="skill-form">
+        <li *ngFor="let skill of skills" class="bubble-skill">
           {{ skill }}
           <img
             (click)="removeSkill(skill)"
@@ -108,7 +121,7 @@
     <button
       type="button"
       [disabled]="!areFieldsFilled()"
-      [ngClass]="areFieldsFilled() ? 'button-user' : 'button-user-disebled'"
+      [ngClass]="areFieldsFilled() ? 'button-people' : 'button-people-disebled'"
       (click)="addPerson()"
     >
       Agregar persona

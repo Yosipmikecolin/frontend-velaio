@@ -15,6 +15,7 @@ export class AppComponent {
   skills: string[] = [];
 
   constructor() {
+    console.log("people",this.people)
     this.taskForm = new FormGroup({
       taskName: new FormControl('', [
         Validators.required,
@@ -55,25 +56,25 @@ export class AppComponent {
   areFieldsFilled(): boolean {
     const fullName = this.taskForm.get('fullName')?.value;
     const age = this.taskForm.get('age')?.value;
-    const skills = this.skills;
 
-    return fullName && age && skills.length > 0;
+    return fullName && age && this.skills.length > 0;
   }
 
   addPerson() {
     const fullNameControl = this.taskForm.get('fullName');
     const ageControl = this.taskForm.get('age');
-    const skills = this.skills;
-    if (fullNameControl?.valid && ageControl?.valid && skills.length) {
+    const skillControl = this.taskForm.get('nameSkill');
+    if (fullNameControl?.valid && ageControl?.valid && this.skills.length) {
       this.people.push({
         name: fullNameControl.value,
         age: fullNameControl.value,
-        skills,
+        skills: this.skills,
       });
-    } else {
-      alert('#');
-      fullNameControl?.markAsTouched();
-      ageControl?.markAsTouched();
+
+      fullNameControl.setValue('');
+      ageControl.setValue('');
+      skillControl?.setValue('');
+      this.skills = [];
     }
   }
 }

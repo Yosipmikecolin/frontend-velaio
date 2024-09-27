@@ -18,6 +18,8 @@ export function dateValidator(): ValidatorFn {
     const selectedDate = new Date(control.value);
     const currentDate = new Date();
 
+    selectedDate.setDate(selectedDate.getDate() + 1);
+
     // Si la fecha seleccionada es anterior o igual a la fecha actual, retorna un error
     return selectedDate > currentDate ? null : { notFutureDate: true };
   };
