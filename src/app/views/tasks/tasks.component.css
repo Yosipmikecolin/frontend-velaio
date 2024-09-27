@@ -92,3 +92,9 @@
   border-radius: 5px;
   margin-top: 10px;
 }
+
+@media (max-width: 920px) {
+  .container-tasks {
+    width: 96%;
+  }
+}
