@@ -15,10 +15,11 @@ A continuación, se enumeran los paquetes necesarios para ejecutar el proyecto e
 En este proyecto, todos los componentes de diseño, desde el Formulario hasta los Botones y las Cards, fueron creados meticulosamente desde cero. Este enfoque se ha adoptado con el propósito específico de demostrar mis habilidades y conocimientos como desarrollador Frontend. Cada componente ha sido diseñado y desarrollado con atención al detalle, reflejando mi capacidad para crear soluciones frontend eficientes y estéticamente atractivas.
 
 
-## Diseño responsivo 🎨
+## API 🎨
 
-Todas las vistas han sido diseñadas y optimizadas para garantizar una experiencia fluida y atractiva, incluso en dispositivos con pantallas pequeñas.
+Dejo aquí el repositorio de la API, la cual se requiere para el funcionamiento de la prueba
 
+[https://github.com/Yosipmikecolin/prueba-backend-velaio](https://github.com/Yosipmikecolin/prueba-backend-velaio)
 
 
 
