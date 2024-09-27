@@ -80,6 +80,10 @@
   gap: 10px;
 }
 
+.bubble-people > img {
+  cursor: pointer;
+}
+
 .bubble-skill {
   background-color: #6439ff;
   color: white;
@@ -91,7 +95,7 @@
   gap: 10px;
 }
 
-.skill-form > img {
+.bubble-skill > img {
   cursor: pointer;
 }
 

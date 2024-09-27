@@ -46,7 +46,7 @@
       <li *ngFor="let person of people" class="bubble-people">
         {{ person.name }}
         <img
-          (click)="removeSkill(person.name)"
+          (click)="removePerson(person.name)"
           src="assets/icon-delete.png"
           width="17px"
           alt="Icono de agregar"

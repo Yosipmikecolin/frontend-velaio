@@ -15,7 +15,7 @@ export class AppComponent {
   skills: string[] = [];
 
   constructor() {
-    console.log("people",this.people)
+    console.log('people', this.people);
     this.taskForm = new FormGroup({
       taskName: new FormControl('', [
         Validators.required,
@@ -51,6 +51,11 @@ export class AppComponent {
   removeSkill(skill: string) {
     const newSkills = this.skills.filter((i) => i !== skill);
     this.skills = newSkills;
+  }
+
+  removePerson(person: string) {
+    const newPeople = this.people.filter((i) => i.name !== person);
+    this.people = newPeople;
   }
 
   areFieldsFilled(): boolean {
