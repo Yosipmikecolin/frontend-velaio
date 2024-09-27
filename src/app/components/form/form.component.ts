@@ -95,7 +95,7 @@ export class FormComponent {
     if (fullNameControl?.valid && ageControl?.valid && this.skills.length) {
       this.people.push({
         name: fullNameControl.value,
-        age: fullNameControl.value,
+        age: ageControl.value,
         skills: this.skills,
       });
 
