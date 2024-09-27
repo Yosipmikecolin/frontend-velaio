@@ -1,1 +1,59 @@
-<button (click)="getTasks()">llamar</button>
+<div class="container-tasks">
+  <div class="header-tasks">
+    <button
+      (click)="changeView('completed')"
+      [ngClass]="{
+        'button-active': type === 'completed',
+        'button-inactive': type === 'incomplete'
+      }"
+    >
+      Completadas
+    </button>
+
+    <button
+      (click)="changeView('incomplete')"
+      [ngClass]="{
+        'button-active': type === 'incomplete',
+        'button-inactive': type === 'completed'
+      }"
+    >
+      Incompletas
+    </button>
+  </div>
+  <div class="body-tasks">
+    <div
+      *ngFor="
+        let item of type === 'completed'
+          ? getCompletedTasks()
+          : getIncompleteTasks()
+      "
+      class="bubble-task"
+    >
+      <div class="header-bubble">
+        <h3>{{ item.task.taskName }}</h3>
+        <img
+          src="assets/icon-incompleted.png"
+          width="30px"
+          alt="Icono de agregar"
+        />
+      </div>
+
+      <h5>Asociados</h5>
+      <hr />
+      <div class="body-bubble">
+        <ul *ngFor="let person of item.people">
+          <li>Nombre: {{ person.name }}</li>
+          <li>Edad: {{ person.age }}</li>
+          <li>
+            Habilidades:
+            <div>
+              <li *ngFor="let skill of person.skills" class="skill">
+                {{ skill }}
+              </li>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
