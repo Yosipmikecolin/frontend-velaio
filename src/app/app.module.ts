@@ -7,14 +7,23 @@ import { HeaderComponent } from './components/header/header.component';
 import { TasksComponent } from './views/tasks/tasks.component';
 import { FormComponent } from './components/form/form.component';
 import { NoFoundComponent } from './views/no-found/no-found.component';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'about', component: AppComponent },
+  { path: '', component: HomeComponent },
+  { path: 'tasks', component: TasksComponent },
+  { path: '**', component: NoFoundComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TasksComponent, FormComponent, NoFoundComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TasksComponent,
+    FormComponent,
+    NoFoundComponent,
+    HomeComponent,
+  ],
   imports: [BrowserModule, ReactiveFormsModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [],
