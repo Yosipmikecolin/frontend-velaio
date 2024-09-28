@@ -19,6 +19,8 @@ export function dateValidator(): ValidatorFn {
     const currentDate = new Date();
 
     selectedDate.setDate(selectedDate.getDate() + 1);
+    selectedDate.setHours(0, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
 
     // Si la fecha seleccionada es anterior o igual a la fecha actual, retorna un error
     return selectedDate > currentDate ? null : { notFutureDate: true };
