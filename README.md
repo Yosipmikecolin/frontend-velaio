@@ -1,27 +1,32 @@
-# FrontendVelaio
+# Prueba frontend VELAIO 🧩
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+ A continuación dejo una guía detallada sobre el proyecto que he completado como parte de una prueba técnica para evaluar mis conocimientos como desarrollador Frontend. En este proyecto, he demostrado mi habilidad para desarrollar aplicaciones frontend utilizando las tecnologías y prácticas más recientes en el ecosistema de Angular.
+ 
+ 
+## Instalación 🔧
+A continuación, se enumeran los paquetes necesarios para ejecutar el proyecto en un entorno local:
 
-## Development server
+- Node.js
+- NPM
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Componentes 🚀
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+En este proyecto, todos los componentes de diseño, desde el Formulario hasta los Botones y las Cards, fueron creados meticulosamente desde cero. Este enfoque se ha adoptado con el propósito específico de demostrar mis habilidades y conocimientos como desarrollador Frontend. Cada componente ha sido diseñado y desarrollado con atención al detalle, reflejando mi capacidad para crear soluciones frontend eficientes y estéticamente atractivas.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## API 🎨
 
-## Running unit tests
+Dejo aquí el repositorio de la API, la cual se requiere para el funcionamiento de la prueba
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[https://github.com/Yosipmikecolin/prueba-backend-velaio](https://github.com/Yosipmikecolin/prueba-backend-velaio)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Video de explicación  📹
+A continuación, les proporciono un vídeo explicativo sobre la funcionalidad de la aplicación
+
+[https://drive.google.com/file/d/1jVNwm8NOWM2sL4xf_6JdD63NAZhIIszP/view?usp=sharing](https://drive.google.com/file/d/1MwgT51JJ608pDPHKWypHuKv7TxHJ1NnG/view?usp=sharing)
