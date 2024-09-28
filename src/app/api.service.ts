@@ -8,7 +8,7 @@ import { DataTask, Task } from 'src/interfaces';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl: string = 'http://localhost:5000/api';
+  private baseUrl: string = 'https://api-velaio-9c0c00b8b82a.herokuapp.com/api';
 
   constructor(private http: HttpClient) {}
 

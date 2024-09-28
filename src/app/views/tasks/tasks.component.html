@@ -20,6 +20,12 @@
     </button>
   </div>
   <div class="body-tasks">
+    <h2 *ngIf="type === 'completed' && getCompletedTasks().length === 0">
+      No hay tareas completadas
+    </h2>
+    <h2 *ngIf="type === 'incomplete' && getIncompleteTasks().length === 0">
+      No hay tareas incompletas
+    </h2>
     <div
       *ngFor="
         let item of type === 'completed'
